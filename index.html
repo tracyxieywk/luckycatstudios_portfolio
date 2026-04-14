@@ -3,55 +3,146 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio</title>
+  <title>Tracy Kyaw | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=DM+Sans:wght@400;500&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- HERO -->
-  <section class="hero">
-    <img src="img_1523.png" class="hero-img" />
+  <header class="hero">
+    <div class="hero-overlay"></div>
 
-    <div class="overlay"></div>
+    <div class="hero-inner">
+      <div class="top-bar">
+        <p class="site-name">Tracy Kyaw</p>
+        <nav class="main-nav">
+          <a href="#work">WORK</a>
+          <a href="#about">ABOUT</a>
+          <a href="#contact">CONTACT</a>
+        </nav>
+      </div>
 
-    <div class="hero-content">
-      <h1>PORTFOLIO</h1>
+      <div class="hero-copy">
+        <h1>
+          Portfolio
+          <span class="sparkle sparkle-1" aria-hidden="true"></span>
+          <span class="sparkle sparkle-2" aria-hidden="true"></span>
+          <span class="sparkle sparkle-3" aria-hidden="true"></span>
+          <span class="sparkle sparkle-4" aria-hidden="true"></span>
+        </h1>
+        <p>2d artist and illustrator</p>
+      </div>
 
-      <nav>
-        <a href="#illustration">Illustration</a>
-        <a href="#painting">Painting</a>
-        <a href="#digital">Digital</a>
-      </nav>
+      <a class="scroll-cue" href="#work">
+        SCROLL
+        <span aria-hidden="true">&#709;</span>
+      </a>
     </div>
-  </section>
+  </header>
 
-  <!-- GALLERY -->
-  <section class="gallery" id="illustration">
-    <h2>Illustration</h2>
-    <div class="grid">
-      <img src="https://via.placeholder.com/400" />
-      <img src="https://via.placeholder.com/400" />
-      <img src="https://via.placeholder.com/400" />
-    </div>
-  </section>
+  <main>
+    <section class="work-section" id="work">
+      <div class="work-header">
+        <h2>SELECTED WORK</h2>
+        <div class="filter-chips" aria-label="Artwork categories">
+          <button class="chip is-active" type="button">All</button>
+          <button class="chip" type="button">Painting</button>
+          <button class="chip" type="button">Digital Art</button>
+          <button class="chip" type="button">Mixed Media</button>
+        </div>
+      </div>
 
-  <section class="gallery" id="painting">
-    <h2>Painting</h2>
-    <div class="grid">
-      <img src="https://via.placeholder.com/400" />
-      <img src="https://via.placeholder.com/400" />
-      <img src="https://via.placeholder.com/400" />
-    </div>
-  </section>
+      <div class="artwork-grid">
+        <article class="artwork-card">
+          <div class="artwork-image placeholder-1" aria-hidden="true"></div>
+          <h3>Golden Hour</h3>
+          <p>Painting · 2024</p>
+        </article>
+        <article class="artwork-card">
+          <div class="artwork-image placeholder-2" aria-hidden="true"></div>
+          <h3>Quiet Reflections</h3>
+          <p>Digital Art · 2024</p>
+        </article>
+        <article class="artwork-card">
+          <div class="artwork-image placeholder-3" aria-hidden="true"></div>
+          <h3>Urban Dreams</h3>
+          <p>Mixed Media · 2023</p>
+        </article>
+        <article class="artwork-card">
+          <div class="artwork-image placeholder-4" aria-hidden="true"></div>
+          <h3>Whispering Moss</h3>
+          <p>Painting · 2023</p>
+        </article>
+        <article class="artwork-card">
+          <div class="artwork-image placeholder-5" aria-hidden="true"></div>
+          <h3>Color Study 07</h3>
+          <p>Digital Art · 2022</p>
+        </article>
+        <article class="artwork-card">
+          <div class="artwork-image placeholder-6" aria-hidden="true"></div>
+          <h3>Blue Tide</h3>
+          <p>Mixed Media · 2022</p>
+        </article>
+      </div>
+    </section>
 
-  <section class="gallery" id="digital">
-    <h2>Digital</h2>
-    <div class="grid">
-      <img src="https://via.placeholder.com/400" />
-      <img src="https://via.placeholder.com/400" />
-      <img src="https://via.placeholder.com/400" />
-    </div>
-  </section>
+    <section class="about-section" id="about">
+      <div class="section-title-row">
+        <h2>ABOUT</h2>
+      </div>
+      <div class="about-layout">
+        <div class="about-text">
+          <h3>Hello, I'm Tracy</h3>
+          <p>
+            I am a 2D artist and illustrator focused on atmosphere, color, and
+            storytelling through character and environment design.
+          </p>
+          <p>
+            My work explores warm, whimsical worlds and quiet emotional moments
+            through illustration, concept sketches, and mixed media studies.
+          </p>
+        </div>
+        <div class="about-highlight">
+          <h4>Quick Facts</h4>
+          <ul>
+            <li>Based in: New York, NY</li>
+            <li>Focus: Illustration & Concept Art</li>
+            <li>Open for commissions and collaborations</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="section-title-row">
+        <h2>CONTACT</h2>
+      </div>
+      <div class="contact-grid">
+        <article class="contact-card">
+          <h3>Personal Email</h3>
+          <p>
+            <a href="mailto:tracyxie.ywk@gmail.com">tracyxie.ywk@gmail.com</a>
+          </p>
+        </article>
+        <article class="contact-card">
+          <h3>School Email</h3>
+          <p>
+            <a href="mailto:tracy.kyaw@sjsu.edu">tracy.kyaw@sjsu.edu</a>
+          </p>
+        </article>
+        <article class="contact-card">
+          <h3>Instagram</h3>
+          <p>
+            <a href="https://instagram.com/luckycat_studios" target="_blank" rel="noopener noreferrer">
+              @luckycat_studios
+            </a>
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
 
 </body>
 </html>
