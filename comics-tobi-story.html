@@ -44,34 +44,109 @@
       color: #f6f3e7;
     }
 
-    .comic-pages {
+    .comic-viewer {
       display: grid;
       gap: 14px;
     }
 
-    .comic-pages img {
+    .comic-page {
       width: 100%;
       border-radius: 6px;
       display: block;
       border: 1px solid rgba(241, 244, 249, 0.16);
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.24);
     }
+
+    .comic-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .comic-controls button {
+      font-family: "DM Sans", Arial, sans-serif;
+      border: 1px solid rgba(242, 215, 74, 0.5);
+      background: rgba(242, 215, 74, 0.16);
+      color: #f6f3e7;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .comic-controls button:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .page-counter {
+      color: #d4deee;
+      font-size: 0.92rem;
+      letter-spacing: 0.04rem;
+    }
   </style>
 </head>
 <body>
   <main class="comic-wrap">
     <header class="comic-header">
-      <a href="./#work">&#8592; Back to portfolio</a>
+      <a href="./comics.html#work">&#8592; Back to comics</a>
       <h1>Tobi</h1>
     </header>
 
-    <section class="comic-pages" aria-label="Comic pages">
-      <img src="comics/closet-story/01.png" alt="Tobi comic page 1">
-      <img src="comics/closet-story/02.png" alt="Tobi comic page 2">
-      <img src="comics/closet-story/03.png" alt="Tobi comic page 3">
-      <img src="comics/closet-story/04.png" alt="Tobi comic page 4">
-      <img src="comics/closet-story/05.png" alt="Tobi comic page 5">
+    <section class="comic-viewer" aria-label="Comic pages">
+      <img id="comic-page" class="comic-page" src="comics/closet-story/01.png" alt="Tobi comic page 1">
+      <div class="comic-controls">
+        <button id="prev-page" type="button">◀ Previous</button>
+        <p id="page-counter" class="page-counter">Page 1 of 5</p>
+        <button id="next-page" type="button">Next ▶</button>
+      </div>
     </section>
   </main>
+  <script>
+    (function () {
+      var pages = [
+        "comics/closet-story/01.png",
+        "comics/closet-story/02.png",
+        "comics/closet-story/03.png",
+        "comics/closet-story/04.png",
+        "comics/closet-story/05.png"
+      ];
+      var pageImage = document.getElementById("comic-page");
+      var counter = document.getElementById("page-counter");
+      var prevButton = document.getElementById("prev-page");
+      var nextButton = document.getElementById("next-page");
+      var pageIndex = 0;
+
+      function renderPage() {
+        var pageNumber = pageIndex + 1;
+        pageImage.src = pages[pageIndex];
+        pageImage.alt = "Tobi comic page " + pageNumber;
+        counter.textContent = "Page " + pageNumber + " of " + pages.length;
+        prevButton.disabled = pageIndex === 0;
+        nextButton.disabled = pageIndex === pages.length - 1;
+      }
+
+      prevButton.addEventListener("click", function () {
+        if (pageIndex > 0) {
+          pageIndex -= 1;
+          renderPage();
+        }
+      });
+
+      nextButton.addEventListener("click", function () {
+        if (pageIndex < pages.length - 1) {
+          pageIndex += 1;
+          renderPage();
+        }
+      });
+
+      window.addEventListener("keydown", function (event) {
+        if (event.key === "ArrowLeft") prevButton.click();
+        if (event.key === "ArrowRight") nextButton.click();
+      });
+
+      renderPage();
+    })();
+  </script>
 </body>
 </html>

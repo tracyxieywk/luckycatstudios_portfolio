@@ -16,10 +16,14 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=DM+Sans:wght@400;500&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=DM+Sans:wght@400;500&family=Playfair+Display:wght@500&family=Quicksand:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body data-page-category="comics">
+  <audio id="bg-music" loop preload="auto"></audio>
+  <button id="music-toggle" class="music-toggle" type="button" aria-pressed="false" aria-label="Play background music">
+    Music: Off
+  </button>
 
   <header class="hero">
     <div class="hero-bg"></div>
@@ -27,7 +31,6 @@
 
     <div class="hero-inner">
       <div class="top-bar">
-        <p class="site-name">Tracy Kyaw</p>
         <nav class="main-nav">
           <a href="#work">WORK</a>
           <a href="#about">ABOUT</a>
@@ -37,7 +40,7 @@
 
       <div class="hero-copy">
         <h1>
-          Portfolio
+          Welcome to my Portfolio
           <span class="sparkle sparkle-1" aria-hidden="true"></span>
           <span class="sparkle sparkle-2" aria-hidden="true"></span>
           <span class="sparkle sparkle-3" aria-hidden="true"></span>
@@ -46,17 +49,33 @@
         <p>2d artist and illustrator</p>
       </div>
 
-      <a class="scroll-cue" href="#work">
-        SCROLL
-        <span aria-hidden="true">&#709;</span>
+      <a class="scroll-cue" href="#begin">SCROLL TO BEGIN<span aria-hidden="true">&#709;</span>
       </a>
     </div>
   </header>
 
   <main>
+    <section class="begin-section" id="begin">
+      <div class="begin-layout">
+        <div class="begin-prompt">
+          <h2>Where would you like to begin?</h2>
+        </div>
+        <div class="begin-links" aria-label="Quick start links">
+          <a href="illustrations.html#work">Illustrations</a>
+          <a href="comics.html#work">Comics</a>
+          <a href="animation.html#work">2D Animation</a>
+          <a href="video-art.html#work">Video Art</a>
+          <a href="modeling.html#work">3D Modeling</a>
+          <a href="photography.html#work">Photography</a>
+          <a href="#about">About Me</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </section>
+
     <section class="work-section" id="work">
       <div class="work-header">
-        <h2>SELECTED WORK</h2>
+        <h2>MY WORK</h2>
         <div class="filter-chips" aria-label="Artwork categories">
           <a class="chip" href="illustrations.html#work">Illustrations</a>
           <a class="chip" href="comics.html#work">Comics</a>
@@ -70,7 +89,7 @@
       <div class="artwork-grid">
         <article class="artwork-card" data-category="illustrations">
           <img class="artwork-image" src="illustrations/illustration-01.png" alt="Sunlit courtyard illustration">
-          <h3>Sunlit Courtyard</h3>
+          <h3>Babylon Lovers</h3>
           <p>Illustrations · 2024</p>
         </article>
         <article class="artwork-card" data-category="photography">
@@ -79,7 +98,7 @@
           <p>Photography · 2024</p>
         </article>
         <article class="artwork-card" data-category="comics">
-          <a class="artwork-link" href="comics-stars-before-drones.html">
+          <a href="comics-stars-before-drones.html" class="artwork-link">
             <img class="artwork-image" src="comics/stars-before-drones/01.png" alt="Stars Before The Drones comic cover page">
           </a>
           <h3>Stars Before The Drones</h3>
@@ -87,13 +106,29 @@
         </article>
         <article class="artwork-card" data-category="illustrations">
           <img class="artwork-image" src="illustrations/illustration-02.png" alt="Portrait illustration with blue and violet tones">
-          <h3>Velvet Portrait</h3>
+          <h3>Open Wound</h3>
           <p>Illustrations · 2023</p>
         </article>
         <article class="artwork-card" data-category="modeling">
-          <div class="artwork-image placeholder-5" aria-hidden="true"></div>
-          <h3>Color Study 07</h3>
-          <p>3D Modeling · 2022</p>
+          <video class="artwork-image modeling-video" controls preload="metadata" playsinline>
+            <source src="3d-modeling/spring-2025-intro-to-3d-modeling-class-reel.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+          <h3>Spring 2025 Intro to 3D Modeling Class Reel</h3>
+          <p>3D Modeling · 2025</p>
+        </article>
+        <article class="artwork-card" data-category="modeling">
+          <img class="artwork-image" src="3d-modeling/modeling-01.png" alt="3D modeling desk scene">
+          <h3>Desk Scene Study</h3>
+          <p>3D Modeling · 2025</p>
+        </article>
+        <article class="artwork-card" data-category="modeling">
+          <video class="artwork-image modeling-video" controls preload="metadata" playsinline>
+            <source src="3d-modeling/chess-set-animation.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+          <h3>Chess Set Animation</h3>
+          <p>3D Modeling · 2025</p>
         </article>
         <article class="artwork-card" data-category="photography">
           <div class="artwork-image placeholder-6" aria-hidden="true"></div>
@@ -101,7 +136,7 @@
           <p>Photography · 2022</p>
         </article>
         <article class="artwork-card" data-category="comics">
-          <a class="artwork-link" href="comics-tobi-story.html">
+          <a href="comics-tobi-story.html" class="artwork-link">
             <img class="artwork-image" src="comics/closet-story/01.png" alt="Tobi comic cover page">
           </a>
           <h3>Tobi</h3>
@@ -109,7 +144,7 @@
         </article>
         <article class="artwork-card" data-category="illustrations">
           <img class="artwork-image" src="illustrations/illustration-03.png" alt="Night scene illustration with pink lilies">
-          <h3>Midnight Lilies</h3>
+          <h3>Flowers in a Strange Place</h3>
           <p>Illustrations · 2024</p>
         </article>
         <article class="artwork-card" data-category="illustrations">
@@ -119,12 +154,22 @@
         </article>
         <article class="artwork-card" data-category="illustrations">
           <img class="artwork-image" src="IMG_1523.png" alt="Forest scene hero illustration">
-          <h3>Forest Guardians</h3>
+          <h3>Winged Mice Shenanigans</h3>
           <p>Illustrations · 2024</p>
         </article>
         <article class="artwork-card" data-category="illustrations">
           <img class="artwork-image" src="illustrations/illustration-05.png" alt="Portrait illustration of two smiling friends with star background">
-          <h3>Starry Friendship</h3>
+          <h3>portrait of friends</h3>
+          <p>Illustrations · 2024</p>
+        </article>
+        <article class="artwork-card" data-category="illustrations">
+          <img class="artwork-image" src="illustrations/illustration-06.png" alt="A Dinner With Screens illustration">
+          <h3>A Dinner With Screens</h3>
+          <p>Illustrations · 2024</p>
+        </article>
+        <article class="artwork-card" data-category="illustrations">
+          <img class="artwork-image" src="illustrations/illustration-07.png" alt="Stage spotlight illustration">
+          <h3>Stage Spotlight</h3>
           <p>Illustrations · 2024</p>
         </article>
       </div>
@@ -136,18 +181,73 @@
       </div>
       <div class="animation-grid">
         <article class="animation-card" data-category="animation">
-          <div class="animation-thumb animation-thumb-1" aria-hidden="true"></div>
-          <h3>Character Motion Reel</h3>
+          <video class="artwork-image animation-video" controls preload="metadata" playsinline poster="2d-animation/animation-01.png">
+            <source src="2d-animation/animation-01.mp4" type="video/mp4">
+            <source src="2d-animation/animation-01.webm" type="video/webm">
+            <source src="2d-animation/animation-01.mov" type="video/quicktime">
+            Your browser does not support video playback.
+          </video>
+          <h3>Animation Study 01</h3>
           <p>2D Animation · 2024</p>
         </article>
         <article class="animation-card" data-category="animation">
-          <div class="animation-thumb animation-thumb-2" aria-hidden="true"></div>
-          <h3>Looped Scene Test</h3>
+          <video class="artwork-image animation-video" controls preload="metadata" playsinline poster="2d-animation/animation-02.png">
+            <source src="2d-animation/animation-02.mp4" type="video/mp4">
+            <source src="2d-animation/animation-02.webm" type="video/webm">
+            <source src="2d-animation/animation-02.mov" type="video/quicktime">
+            Your browser does not support video playback.
+          </video>
+          <h3>Animation Study 02</h3>
           <p>2D Animation · 2024</p>
         </article>
         <article class="animation-card" data-category="animation">
-          <div class="animation-thumb animation-thumb-3" aria-hidden="true"></div>
-          <h3>FX & Timing Study</h3>
+          <video class="artwork-image animation-video" controls preload="metadata" playsinline poster="2d-animation/animation-03.png">
+            <source src="2d-animation/animation-03.mp4" type="video/mp4">
+            <source src="2d-animation/animation-03.webm" type="video/webm">
+            <source src="2d-animation/animation-03.mov" type="video/quicktime">
+            Your browser does not support video playback.
+          </video>
+          <h3>Animation Study 03</h3>
+          <p>2D Animation · 2024</p>
+        </article>
+        <article class="animation-card" data-category="animation">
+          <video class="artwork-image animation-video" controls preload="metadata" playsinline poster="2d-animation/animation-04.png">
+            <source src="2d-animation/animation-04.mp4" type="video/mp4">
+            <source src="2d-animation/animation-04.webm" type="video/webm">
+            <source src="2d-animation/animation-04.mov" type="video/quicktime">
+            Your browser does not support video playback.
+          </video>
+          <h3>Animation Study 04</h3>
+          <p>2D Animation · 2024</p>
+        </article>
+        <article class="animation-card" data-category="animation">
+          <video class="artwork-image animation-video" controls preload="metadata" playsinline poster="2d-animation/animation-05.png">
+            <source src="2d-animation/animation-05.mp4" type="video/mp4">
+            <source src="2d-animation/animation-05.webm" type="video/webm">
+            <source src="2d-animation/animation-05.mov" type="video/quicktime">
+            Your browser does not support video playback.
+          </video>
+          <h3>Animation Study 05</h3>
+          <p>2D Animation · 2024</p>
+        </article>
+        <article class="animation-card" data-category="animation">
+          <video class="artwork-image animation-video" controls preload="metadata" playsinline poster="2d-animation/animation-06.png">
+            <source src="2d-animation/animation-06.mp4" type="video/mp4">
+            <source src="2d-animation/animation-06.webm" type="video/webm">
+            <source src="2d-animation/animation-06.mov" type="video/quicktime">
+            Your browser does not support video playback.
+          </video>
+          <h3>Animation Study 06</h3>
+          <p>2D Animation · 2024</p>
+        </article>
+        <article class="animation-card" data-category="animation">
+          <video class="artwork-image animation-video" controls preload="metadata" playsinline poster="2d-animation/animation-07.png">
+            <source src="2d-animation/animation-07.mp4" type="video/mp4">
+            <source src="2d-animation/animation-07.webm" type="video/webm">
+            <source src="2d-animation/animation-07.mov" type="video/quicktime">
+            Your browser does not support video playback.
+          </video>
+          <h3>Animation Study 07</h3>
           <p>2D Animation · 2023</p>
         </article>
       </div>
@@ -160,77 +260,79 @@
       <div class="video-art-grid">
         <article class="video-art-card" data-category="video-art">
           <div class="video-art-thumb video-art-thumb-1" aria-hidden="true"></div>
-          <h3>Dream Sequence Clip</h3>
+          <h3>Video Piece 01</h3>
           <p>Video Art · 2024</p>
         </article>
         <article class="video-art-card" data-category="video-art">
           <div class="video-art-thumb video-art-thumb-2" aria-hidden="true"></div>
-          <h3>Visual Poem Study</h3>
+          <h3>Video Piece 02</h3>
           <p>Video Art · 2024</p>
-        </article>
-        <article class="video-art-card" data-category="video-art">
-          <div class="video-art-thumb video-art-thumb-3" aria-hidden="true"></div>
-          <h3>Atmospheric Montage</h3>
-          <p>Video Art · 2023</p>
         </article>
       </div>
     </section>
 
     <section class="about-section" id="about">
       <div class="section-title-row">
-        <h2>ABOUT</h2>
+        <h2>ABOUT ME</h2>
       </div>
       <div class="about-layout">
         <div class="about-text">
           <h3>Hello, I'm Tracy</h3>
           <p>
-            I am a 2D artist and illustrator focused on atmosphere, color, and
-            storytelling through character and environment design.
-          </p>
-          <p>
-            My work explores warm, whimsical worlds and quiet emotional moments
-            through illustration, concept sketches, and mixed media studies.
+            I'm a third-year student at SJSU working towards my BFA in Digital Media Art.
+            Though my current focus is digital animation and illustration, I hope to expand
+            into other disciplines, such as photography and 3D modeling. With my digital
+            artworks, I aim to depict and explore the struggles of living with mental illnesses
+            and the power of one's own inner feelings. I also enjoy illustrating comics and
+            scenes that brings my imagination to the screen. In addition, I have completed a few
+            3D modeling projects. Recently, I have found great interest in photography and
+            editing. Through my photography series, I wish to capture her perspective on life and
+            life experiences. As a whole, my works of different mediums vary from lighter pieces
+            of vibrant illustrations to deeper themes of mental illness and emotions.
           </p>
         </div>
         <div class="about-highlight">
           <img class="about-profile-image" src="illustrations/profile.png" alt="Portrait of Tracy Kyaw">
           <h4>Quick Facts</h4>
           <ul>
-            <li>Based in: New York, NY</li>
-            <li>Focus: Illustration & Concept Art</li>
-            <li>Open for commissions and collaborations</li>
+            <li>Based in: San Jose, CA</li>
+            <li>Focus: Illustration & Animation</li>
+            <li>Open for internships, commissions and collaborations</li>
           </ul>
         </div>
       </div>
     </section>
 
     <section class="contact-section" id="contact">
-      <div class="section-title-row">
-        <h2>CONTACT</h2>
-      </div>
-      <div class="contact-grid">
-        <article class="contact-card">
-          <h3>Personal Email</h3>
-          <p>
-            <a href="mailto:tracyxie.ywk@gmail.com">tracyxie.ywk@gmail.com</a>
-          </p>
-        </article>
-        <article class="contact-card">
-          <h3>School Email</h3>
-          <p>
-            <a href="mailto:tracy.kyaw@sjsu.edu">tracy.kyaw@sjsu.edu</a>
-          </p>
-        </article>
-        <article class="contact-card">
-          <h3>Instagram</h3>
-          <p>
-            <a href="https://instagram.com/luckycat_studios" target="_blank" rel="noopener noreferrer">
-              @luckycat_studios
-            </a>
-          </p>
-        </article>
+      <div class="contact-layout">
+        <div class="contact-intro">
+          <h3>Let's Work Together!</h3>
+        </div>
+        <div class="contact-grid">
+          <article class="contact-card">
+            <h3>Personal Email</h3>
+            <p>
+              <a href="mailto:tracyxie.ywk@gmail.com">tracyxie.ywk@gmail.com</a>
+            </p>
+          </article>
+          <article class="contact-card">
+            <h3>School Email</h3>
+            <p>
+              <a href="mailto:tracy.kyaw@sjsu.edu">tracy.kyaw@sjsu.edu</a>
+            </p>
+          </article>
+          <article class="contact-card">
+            <h3>Instagram</h3>
+            <p>
+              <a href="https://instagram.com/luckycat_studios" target="_blank" rel="noopener noreferrer">
+                @luckycat_studios
+              </a>
+            </p>
+          </article>
+        </div>
       </div>
     </section>
+
   </main>
 
   <script>
@@ -238,15 +340,49 @@
       var hero = document.querySelector(".hero");
       if (!hero) return;
 
-      function updateHeroFade() {
-        var progress = Math.min(window.scrollY / (window.innerHeight * 0.45), 1);
-        var opacity = 0.55 + progress * 0.45;
-        hero.style.setProperty("--hero-image-opacity", opacity.toFixed(3));
+      var targetProgress = 0;
+      var currentProgress = 0;
+      var isAnimating = false;
+
+      function updateTargetProgress() {
+        var fadeDistance = Math.max(window.innerHeight * 0.7, 1);
+        targetProgress = Math.min(window.scrollY / fadeDistance, 1);
       }
 
-      updateHeroFade();
-      window.addEventListener("scroll", updateHeroFade, { passive: true });
-      window.addEventListener("resize", updateHeroFade);
+      function render() {
+        currentProgress += (targetProgress - currentProgress) * 0.12;
+        if (Math.abs(targetProgress - currentProgress) < 0.001) {
+          currentProgress = targetProgress;
+        }
+
+        var eased = 1 - Math.pow(1 - currentProgress, 2);
+        var opacity = 0.68 + eased * 0.32;
+        var yShift = eased * 18;
+
+        hero.style.setProperty("--hero-image-opacity", opacity.toFixed(3));
+        hero.style.setProperty("--hero-image-shift", yShift.toFixed(2) + "px");
+
+        if (currentProgress !== targetProgress) {
+          window.requestAnimationFrame(render);
+        } else {
+          isAnimating = false;
+        }
+      }
+
+      function requestRender() {
+        if (isAnimating) return;
+        isAnimating = true;
+        window.requestAnimationFrame(render);
+      }
+
+      function onViewportChange() {
+        updateTargetProgress();
+        requestRender();
+      }
+
+      onViewportChange();
+      window.addEventListener("scroll", onViewportChange, { passive: true });
+      window.addEventListener("resize", onViewportChange);
     })();
 
     (function () {
@@ -287,7 +423,167 @@
         }
       });
     })();
+
+    (function () {
+      var hero = document.querySelector(".hero");
+      var scrollCue = document.querySelector(".scroll-cue");
+      var beginSection = document.querySelector("#begin");
+      if (!hero || !scrollCue || !beginSection) return;
+
+      var loader = document.createElement("div");
+      loader.className = "scroll-loader";
+      loader.innerHTML =
+        '<div class="scroll-loader-stars" aria-hidden="true"><span></span><span></span><span></span></div>' +
+        "<p>LOADING</p>";
+      document.body.appendChild(loader);
+
+      var hasShownFromScroll = false;
+      var hideTimer = null;
+
+      function showLoader(durationMs) {
+        loader.classList.add("is-visible");
+        if (hideTimer) window.clearTimeout(hideTimer);
+        hideTimer = window.setTimeout(function () {
+          loader.classList.remove("is-visible");
+        }, durationMs || 720);
+      }
+
+      function triggerFromLanding() {
+        var heroHeight = hero.getBoundingClientRect().height || window.innerHeight;
+        if (hasShownFromScroll || window.scrollY > heroHeight * 0.55) return;
+        hasShownFromScroll = true;
+        showLoader(3200);
+      }
+
+      scrollCue.addEventListener("click", function (e) {
+        e.preventDefault();
+        showLoader(3800);
+        window.setTimeout(function () {
+          beginSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 2100);
+      });
+
+      window.addEventListener("wheel", function (e) {
+        if (e.deltaY > 0) triggerFromLanding();
+      }, { passive: true });
+
+      var touchStartY = 0;
+      window.addEventListener("touchstart", function (e) {
+        if (!e.touches || !e.touches.length) return;
+        touchStartY = e.touches[0].clientY;
+      }, { passive: true });
+
+      window.addEventListener("touchmove", function (e) {
+        if (!e.touches || !e.touches.length) return;
+        var delta = touchStartY - e.touches[0].clientY;
+        if (delta > 8) triggerFromLanding();
+      }, { passive: true });
+    })();
+
+    (function () {
+      var audio = document.getElementById("bg-music");
+      var toggle = document.getElementById("music-toggle");
+      var hero = document.querySelector(".hero");
+      if (!audio || !toggle) return;
+
+      var landingTrack = "landing-music.mp3";
+      var siteTrack = "background-music.mp3";
+      var storageKey = "portfolioMusicEnabled";
+      var userEnabledAudio = false;
+      var userPausedAudio = true;
+      var currentTrack = "";
+
+      function readMusicPreference() {
+        try {
+          return window.localStorage.getItem(storageKey) === "true";
+        } catch (e) {
+          return false;
+        }
+      }
+
+      function writeMusicPreference(isEnabled) {
+        try {
+          window.localStorage.setItem(storageKey, isEnabled ? "true" : "false");
+        } catch (e) {
+          // Ignore storage access issues
+        }
+      }
+
+      function setToggleState(isPlaying) {
+        toggle.textContent = isPlaying ? "Music: On" : "Music: Off";
+        toggle.setAttribute("aria-pressed", isPlaying ? "true" : "false");
+        toggle.setAttribute("aria-label", isPlaying ? "Pause background music" : "Play background music");
+      }
+
+      function getTargetTrack() {
+        if (!hero) return siteTrack;
+        var heroHeight = hero.getBoundingClientRect().height || window.innerHeight;
+        return window.scrollY < heroHeight - 24 ? landingTrack : siteTrack;
+      }
+
+      function setTrack(trackPath) {
+        if (currentTrack === trackPath) return;
+        currentTrack = trackPath;
+        audio.src = trackPath;
+        audio.load();
+      }
+
+      function tryPlay() {
+        audio.play().then(function () {
+          setToggleState(true);
+        }).catch(function () {
+          setToggleState(false);
+        });
+      }
+
+      function startOnce() {
+        if (!audio.paused) return;
+        userEnabledAudio = true;
+        userPausedAudio = false;
+        writeMusicPreference(true);
+        setTrack(getTargetTrack());
+        tryPlay();
+      }
+
+      function syncTrackToScroll() {
+        if (!userEnabledAudio || userPausedAudio) return;
+        var nextTrack = getTargetTrack();
+        if (nextTrack !== currentTrack) {
+          setTrack(nextTrack);
+          tryPlay();
+        }
+      }
+
+      window.addEventListener("pointerdown", startOnce, { once: true, passive: true });
+      window.addEventListener("keydown", startOnce, { once: true });
+      window.addEventListener("scroll", syncTrackToScroll, { passive: true });
+      window.addEventListener("resize", syncTrackToScroll);
+
+      toggle.addEventListener("click", function () {
+        if (audio.paused) {
+          userEnabledAudio = true;
+          userPausedAudio = false;
+          writeMusicPreference(true);
+          setTrack(getTargetTrack());
+          tryPlay();
+        } else {
+          userPausedAudio = true;
+          writeMusicPreference(false);
+          audio.pause();
+          setToggleState(false);
+        }
+      });
+
+      setToggleState(false);
+      if (readMusicPreference()) {
+        userEnabledAudio = true;
+        userPausedAudio = false;
+        setTrack(getTargetTrack());
+        tryPlay();
+      }
+    })();
   </script>
+  <script src="artwork-lightbox.js"></script>
 
 </body>
 </html>
