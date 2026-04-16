@@ -631,6 +631,17 @@ img.artwork-image {
   background: #0f1816;
 }
 
+.video-art-embed {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 220px;
+  border-radius: 6px;
+  border: 1px solid rgba(34, 42, 40, 0.08);
+  background: #0f1816;
+  pointer-events: auto;
+}
+
 .artwork-link {
   display: block;
 }
@@ -899,6 +910,23 @@ img.artwork-image {
   margin-top: 6px;
   color: #4a5f56;
   font-size: 0.96rem;
+}
+
+.video-art-external-link {
+  margin-top: 8px;
+}
+
+.video-art-external-link a {
+  color: #3d6b5c;
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(61, 107, 92, 0.35);
+}
+
+.video-art-external-link a:hover {
+  color: #2a4d42;
+  border-bottom-color: rgba(42, 77, 66, 0.6);
 }
 
 .about-text,
