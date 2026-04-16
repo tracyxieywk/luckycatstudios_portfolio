@@ -73,7 +73,7 @@ body {
 }
 
 .hero {
-  --hero-image-opacity: 0.55;
+  --hero-image-opacity: 0.75;
   --hero-image-shift: 0px;
   position: relative;
   min-height: 100vh;
