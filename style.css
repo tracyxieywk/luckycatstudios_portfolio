@@ -55,6 +55,23 @@ body {
   background: rgba(78, 123, 95, 0.9);
 }
 
+.music-resume {
+  position: fixed;
+  right: 16px;
+  bottom: 56px;
+  z-index: 10021;
+  border: 1px solid rgba(248, 231, 120, 0.75);
+  background: rgba(30, 47, 41, 0.93);
+  color: #f8f2d3;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-family: "Quicksand", "DM Sans", Arial, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.24);
+}
+
 .hero {
   --hero-image-opacity: 0.55;
   --hero-image-shift: 0px;

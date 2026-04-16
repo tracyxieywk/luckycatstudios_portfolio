@@ -24,6 +24,9 @@
   <button id="music-toggle" class="music-toggle" type="button" aria-pressed="false" aria-label="Play background music">
     Music: Off
   </button>
+  <button id="music-resume" class="music-resume" type="button" hidden>
+    Tap to resume music
+  </button>
 
   <header class="hero">
     <div class="hero-bg"></div>
@@ -483,8 +486,9 @@
     (function () {
       var audio = document.getElementById("bg-music");
       var toggle = document.getElementById("music-toggle");
+      var resumeButton = document.getElementById("music-resume");
       var hero = document.querySelector(".hero");
-      if (!audio || !toggle) return;
+      if (!audio || !toggle || !resumeButton) return;
 
       var landingTrack = "landing-music.mp3";
       var siteTrack = "background-music.mp3";
@@ -492,6 +496,7 @@
       var userEnabledAudio = false;
       var userPausedAudio = true;
       var currentTrack = "";
+      var resumeEventsBound = false;
 
       function readMusicPreference() {
         try {
@@ -515,6 +520,14 @@
         toggle.setAttribute("aria-label", isPlaying ? "Pause background music" : "Play background music");
       }
 
+      function showResumeButton() {
+        resumeButton.hidden = false;
+      }
+
+      function hideResumeButton() {
+        resumeButton.hidden = true;
+      }
+
       function getTargetTrack() {
         if (!hero) return siteTrack;
         var heroHeight = hero.getBoundingClientRect().height || window.innerHeight;
@@ -531,8 +544,19 @@
       function tryPlay() {
         audio.play().then(function () {
           setToggleState(true);
+          hideResumeButton();
+          if (resumeEventsBound) {
+            window.removeEventListener("pointerdown", startOnce);
+            window.removeEventListener("keydown", startOnce);
+            window.removeEventListener("touchstart", startOnce);
+            window.removeEventListener("wheel", startOnce);
+            resumeEventsBound = false;
+          }
         }).catch(function () {
           setToggleState(false);
+          if (userEnabledAudio && userPausedAudio === false) {
+            showResumeButton();
+          }
         });
       }
 
@@ -554,10 +578,25 @@
         }
       }
 
-      window.addEventListener("pointerdown", startOnce, { once: true, passive: true });
-      window.addEventListener("keydown", startOnce, { once: true });
+      function bindResumeEvents() {
+        if (resumeEventsBound) return;
+        window.addEventListener("pointerdown", startOnce, { passive: true });
+        window.addEventListener("keydown", startOnce);
+        window.addEventListener("touchstart", startOnce, { passive: true });
+        window.addEventListener("wheel", startOnce, { passive: true });
+        resumeEventsBound = true;
+      }
+
+      bindResumeEvents();
       window.addEventListener("scroll", syncTrackToScroll, { passive: true });
       window.addEventListener("resize", syncTrackToScroll);
+      document.addEventListener("visibilitychange", function () {
+        if (document.visibilityState === "visible" && userEnabledAudio && userPausedAudio === false) {
+          setTrack(getTargetTrack());
+          tryPlay();
+          bindResumeEvents();
+        }
+      });
 
       toggle.addEventListener("click", function () {
         if (audio.paused) {
@@ -571,7 +610,16 @@
           writeMusicPreference(false);
           audio.pause();
           setToggleState(false);
+          hideResumeButton();
         }
+      });
+
+      resumeButton.addEventListener("click", function () {
+        userEnabledAudio = true;
+        userPausedAudio = false;
+        writeMusicPreference(true);
+        setTrack(getTargetTrack());
+        tryPlay();
       });
 
       setToggleState(false);
@@ -580,6 +628,7 @@
         userPausedAudio = false;
         setTrack(getTargetTrack());
         tryPlay();
+        bindResumeEvents();
       }
     })();
   </script>
