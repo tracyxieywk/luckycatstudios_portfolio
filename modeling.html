@@ -67,7 +67,7 @@
           <a href="illustrations.html#work">Illustrations</a>
           <a href="video-art.html#work">Video Art</a>
           <a href="modeling.html#work">3D Modeling</a>
-          <a href="photography.html#work">Photography</a>
+          <a href="coding.html#work">Coding</a>
           <a href="#about">About Me</a>
           <a href="#contact">Contact</a>
         </div>
@@ -81,38 +81,15 @@
           <a class="chip" href="illustrations.html#work">Illustrations</a>
           <a class="chip" href="video-art.html#work">Video Art</a>
           <a class="chip" href="modeling.html#work">3D Modeling</a>
-          <a class="chip" href="photography.html#work">Photography</a>
+          <a class="chip" href="coding.html#work">Coding</a>
         </div>
       </div>
 
       <div class="artwork-grid">
         <article class="artwork-card" data-category="illustrations">
-          <img class="artwork-image" src="illustrations/illustration-01.png" alt="Sunlit courtyard illustration">
-          <h3>Babylon Lovers</h3>
-          <p>Illustrations · 2024</p>
-        </article>
-        <article class="artwork-card" data-category="photography">
-          <div class="artwork-image placeholder-2" aria-hidden="true"></div>
-          <h3>Quiet Reflections</h3>
-          <p>Photography · 2024</p>
-        </article>
-        <article class="artwork-card" data-category="illustrations">
           <img class="artwork-image" src="illustrations/illustration-02.png" alt="Portrait illustration with blue and violet tones">
           <h3>Open Wound</h3>
           <p>Illustrations · 2023</p>
-        </article>
-        <article class="artwork-card" data-category="modeling">
-          <video class="artwork-image modeling-video" controls preload="metadata" playsinline>
-            <source src="3d-modeling/spring-2025-intro-to-3d-modeling-class-reel.mp4" type="video/mp4">
-            Your browser does not support video playback.
-          </video>
-          <h3>Spring 2025 Intro to 3D Modeling Class Reel</h3>
-          <p>3D Modeling · 2025</p>
-        </article>
-        <article class="artwork-card" data-category="modeling">
-          <img class="artwork-image" src="3d-modeling/modeling-01.png" alt="3D modeling desk scene">
-          <h3>Desk Scene Study</h3>
-          <p>3D Modeling · 2025</p>
         </article>
         <article class="artwork-card" data-category="modeling">
           <video class="artwork-image modeling-video" controls preload="metadata" playsinline>
@@ -122,29 +99,9 @@
           <h3>Chess Set Animation</h3>
           <p>3D Modeling · 2025</p>
         </article>
-        <article class="artwork-card" data-category="photography">
-          <div class="artwork-image placeholder-6" aria-hidden="true"></div>
-          <h3>Blue Tide</h3>
-          <p>Photography · 2022</p>
-        </article>
-        <article class="artwork-card" data-category="illustrations">
-          <img class="artwork-image" src="illustrations/illustration-03.png" alt="Night scene illustration with pink lilies">
-          <h3>Flowers in a Strange Place</h3>
-          <p>Illustrations · 2024</p>
-        </article>
-        <article class="artwork-card" data-category="illustrations">
-          <img class="artwork-image" src="illustrations/illustration-04.png" alt="Koi fish pond illustration">
-          <h3>Koi Pond Study</h3>
-          <p>Illustrations · 2024</p>
-        </article>
         <article class="artwork-card" data-category="illustrations">
           <img class="artwork-image" src="IMG_1523.png" alt="Forest scene hero illustration">
           <h3>Winged Mice Shenanigans</h3>
-          <p>Illustrations · 2024</p>
-        </article>
-        <article class="artwork-card" data-category="illustrations">
-          <img class="artwork-image" src="illustrations/illustration-05.png" alt="Portrait illustration of two smiling friends with star background">
-          <h3>portrait of friends</h3>
           <p>Illustrations · 2024</p>
         </article>
         <article class="artwork-card" data-category="illustrations">
@@ -200,6 +157,29 @@
             allowfullscreen></iframe>
           <h3>Boil Over</h3>
           <p>Spring 2026</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="coding-section" id="coding">
+      <div class="section-title-row">
+        <h2>CODING</h2>
+      </div>
+      <div class="coding-grid">
+        <article class="coding-card" data-category="coding">
+          <div class="coding-thumb coding-thumb-1" aria-hidden="true"></div>
+          <h3>Coding Project 01</h3>
+          <p>Coding · 2026</p>
+        </article>
+        <article class="coding-card" data-category="coding">
+          <div class="coding-thumb coding-thumb-2" aria-hidden="true"></div>
+          <h3>Coding Project 02</h3>
+          <p>Coding · 2026</p>
+        </article>
+        <article class="coding-card" data-category="coding">
+          <div class="coding-thumb coding-thumb-3" aria-hidden="true"></div>
+          <h3>Coding Project 03</h3>
+          <p>Coding · 2026</p>
         </article>
       </div>
     </section>
@@ -322,13 +302,14 @@
       var selectedCategory = document.body.dataset.pageCategory || "all";
       var artworkCards = document.querySelectorAll(".artwork-card[data-category]");
       var videoArtSection = document.querySelector(".video-art-section");
+      var codingSection = document.querySelector(".coding-section");
       var tabLinks = document.querySelectorAll(".filter-chips .chip");
       var categoryToPage = {
         all: "index.html",
         illustrations: "illustrations.html",
         "video-art": "video-art.html",
         modeling: "modeling.html",
-        photography: "photography.html"
+        coding: "coding.html"
       };
 
       artworkCards.forEach(function (card) {
@@ -339,6 +320,10 @@
 
       if (videoArtSection) {
         videoArtSection.style.display = selectedCategory === "all" || selectedCategory === "video-art" ? "" : "none";
+      }
+
+      if (codingSection) {
+        codingSection.style.display = selectedCategory === "all" || selectedCategory === "coding" ? "" : "none";
       }
 
       tabLinks.forEach(function (tab) {
