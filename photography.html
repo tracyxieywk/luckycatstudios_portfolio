@@ -454,62 +454,6 @@
     })();
 
     (function () {
-      var hero = document.querySelector(".hero");
-      var scrollCue = document.querySelector(".scroll-cue");
-      var beginSection = document.querySelector("#begin");
-      if (!hero || !scrollCue || !beginSection) return;
-
-      var loader = document.createElement("div");
-      loader.className = "scroll-loader";
-      loader.innerHTML =
-        '<div class="scroll-loader-stars" aria-hidden="true"><span></span><span></span><span></span></div>' +
-        "<p>LOADING</p>";
-      document.body.appendChild(loader);
-
-      var hasShownFromScroll = false;
-      var hideTimer = null;
-
-      function showLoader(durationMs) {
-        loader.classList.add("is-visible");
-        if (hideTimer) window.clearTimeout(hideTimer);
-        hideTimer = window.setTimeout(function () {
-          loader.classList.remove("is-visible");
-        }, durationMs || 720);
-      }
-
-      function triggerFromLanding() {
-        var heroHeight = hero.getBoundingClientRect().height || window.innerHeight;
-        if (hasShownFromScroll || window.scrollY > heroHeight * 0.55) return;
-        hasShownFromScroll = true;
-        showLoader(3200);
-      }
-
-      scrollCue.addEventListener("click", function (e) {
-        e.preventDefault();
-        showLoader(3800);
-        window.setTimeout(function () {
-          beginSection.scrollIntoView({ behavior: "smooth", block: "start" });
-        }, 2100);
-      });
-
-      window.addEventListener("wheel", function (e) {
-        if (e.deltaY > 0) triggerFromLanding();
-      }, { passive: true });
-
-      var touchStartY = 0;
-      window.addEventListener("touchstart", function (e) {
-        if (!e.touches || !e.touches.length) return;
-        touchStartY = e.touches[0].clientY;
-      }, { passive: true });
-
-      window.addEventListener("touchmove", function (e) {
-        if (!e.touches || !e.touches.length) return;
-        var delta = touchStartY - e.touches[0].clientY;
-        if (delta > 8) triggerFromLanding();
-      }, { passive: true });
-    })();
-
-    (function () {
       var audio = document.getElementById("bg-music");
       var toggle = document.getElementById("music-toggle");
       var resumeButton = document.getElementById("music-resume");
