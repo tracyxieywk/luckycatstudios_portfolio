@@ -488,23 +488,6 @@ main > * {
   font-size: 1rem;
 }
 
-.artwork-card .comic-reader-link {
-  margin-top: 8px;
-}
-
-.artwork-card .comic-reader-link a {
-  color: #3d6b5c;
-  font-size: 0.92rem;
-  font-weight: 500;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(61, 107, 92, 0.35);
-}
-
-.artwork-card .comic-reader-link a:hover {
-  color: #2a4d42;
-  border-bottom-color: rgba(42, 77, 66, 0.6);
-}
-
 .artwork-image {
   width: 100%;
   border-radius: 4px;
@@ -524,13 +507,6 @@ img.artwork-image {
   object-fit: contain;
   object-position: center;
   background: #eef1ec;
-}
-
-.animation-video {
-  display: block;
-  width: 100%;
-  height: auto;
-  background: #0f1816;
 }
 
 .modeling-video {
@@ -645,7 +621,6 @@ img.artwork-image {
 
 .about-section,
 .contact-section,
-.animation-section,
 .video-art-section {
   max-width: 1200px;
   margin: 0 auto 52px;
@@ -716,23 +691,10 @@ img.artwork-image {
   gap: 20px;
 }
 
-.animation-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-}
-
 .video-art-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
-}
-
-.animation-card {
-  background: linear-gradient(180deg, rgba(245, 248, 241, 0.62) 0%, rgba(231, 238, 230, 0.62) 100%);
-  border: 1px solid var(--moss-300);
-  border-radius: 8px;
-  padding: 14px;
 }
 
 .video-art-card {
@@ -742,31 +704,12 @@ img.artwork-image {
   padding: 14px;
 }
 
-.animation-thumb {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: 8px;
-  border: 1px solid rgba(34, 42, 40, 0.1);
-  position: relative;
-}
-
 .video-art-thumb {
   width: 100%;
   aspect-ratio: 16 / 9;
   border-radius: 8px;
   border: 1px solid rgba(34, 42, 40, 0.1);
   position: relative;
-}
-
-.animation-thumb::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  border-left: 17px solid rgba(255, 255, 255, 0.9);
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
 }
 
 .video-art-thumb::after {
@@ -780,18 +723,6 @@ img.artwork-image {
   border-bottom: 10px solid transparent;
 }
 
-.animation-thumb-1 {
-  background: linear-gradient(140deg, #6f9ea4 0%, #415f6e 100%);
-}
-
-.animation-thumb-2 {
-  background: linear-gradient(140deg, #7ba17f 0%, #3f6154 100%);
-}
-
-.animation-thumb-3 {
-  background: linear-gradient(140deg, #7c86bb 0%, #4d4a79 100%);
-}
-
 .video-art-thumb-1 {
   background: linear-gradient(140deg, #8278ba 0%, #4e4a80 100%);
 }
@@ -802,19 +733,6 @@ img.artwork-image {
 
 .video-art-thumb-3 {
   background: linear-gradient(140deg, #a582ad 0%, #684a73 100%);
-}
-
-.animation-card h3 {
-  margin-top: 10px;
-  font-family: "Playfair Display", serif;
-  font-size: 1.35rem;
-  color: #263630;
-}
-
-.animation-card p {
-  margin-top: 6px;
-  color: #4a5f56;
-  font-size: 0.96rem;
 }
 
 .video-art-card h3 {
@@ -1018,7 +936,6 @@ img.artwork-image {
 
   .about-section,
   .contact-section,
-  .animation-section,
   .video-art-section {
     padding: 24px 14px;
   }
@@ -1064,10 +981,6 @@ img.artwork-image {
     padding-top: 0;
   }
 
-  .animation-grid {
-    grid-template-columns: 1fr;
-  }
-
   .video-art-grid {
     grid-template-columns: 1fr;
   }
@@ -1093,10 +1006,6 @@ img.artwork-image {
   .contact-layout {
     grid-template-columns: minmax(180px, 0.8fr) minmax(0, 2fr);
     gap: 18px;
-  }
-
-  .animation-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .video-art-grid {
