@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+img {
+  max-width: 100%;
+}
+
 :root {
   --forest-deep: #2f4b43;
   --forest-mid: #4c6b62;
@@ -751,8 +755,8 @@ img.artwork-image {
 .coding-link {
   display: block;
   overflow: hidden;
-  border-radius: 8px;
-  border: 1px solid rgba(34, 42, 40, 0.1);
+  border-radius: 6px;
+  border: 1px solid rgba(34, 42, 40, 0.08);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -844,7 +848,7 @@ img.artwork-image {
 
 .about-text-body {
   display: grid;
-  grid-template-columns: minmax(160px, 240px) 1fr;
+  grid-template-columns: minmax(140px, 180px) 1fr;
   gap: 20px;
   align-items: start;
 }
@@ -1035,7 +1039,7 @@ img.artwork-image {
   }
 
   .about-photo {
-    max-width: 280px;
+    max-width: 220px;
   }
 
   .contact-grid {
