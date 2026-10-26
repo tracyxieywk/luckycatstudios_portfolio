@@ -520,6 +520,12 @@ img.artwork-image {
   background: #0f1816;
 }
 
+/* Must outrank .artwork-image:not(img) */
+.artwork-image.modeling-video {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
 .video-art-video {
   display: block;
   width: 100%;
