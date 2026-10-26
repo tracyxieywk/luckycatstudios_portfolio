@@ -490,11 +490,12 @@ main > * {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   max-width: 762px;
   margin: 0 auto;
+  align-items: start;
 }
 
 .illustrations-section img.artwork-image {
-  aspect-ratio: 5 / 4;
-  object-fit: contain;
+  background: transparent;
+  border: none;
 }
 
 .artwork-card h3 {
