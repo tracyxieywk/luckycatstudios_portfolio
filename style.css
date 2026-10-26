@@ -498,20 +498,6 @@ main > * {
   border: none;
 }
 
-.artwork-card h3 {
-  margin-top: 12px;
-  font-family: "Playfair Display", serif;
-  font-size: 1.55rem;
-  font-weight: 500;
-  color: #263630;
-}
-
-.artwork-card p {
-  margin-top: 6px;
-  color: #4a5f56;
-  font-size: 1rem;
-}
-
 .artwork-image {
   width: 100%;
   border-radius: 4px;
@@ -706,6 +692,7 @@ img.artwork-image {
   gap: 16px;
 }
 
+.artwork-card,
 .video-art-card {
   background: linear-gradient(180deg, rgba(245, 248, 241, 0.62) 0%, rgba(231, 238, 230, 0.62) 100%);
   border: 1px solid var(--moss-300);
@@ -744,6 +731,7 @@ img.artwork-image {
   background: linear-gradient(140deg, #a582ad 0%, #684a73 100%);
 }
 
+.artwork-card h3,
 .video-art-card h3 {
   margin-top: 10px;
   font-family: "Playfair Display", serif;
@@ -751,6 +739,7 @@ img.artwork-image {
   color: #263630;
 }
 
+.artwork-card p,
 .video-art-card p {
   margin-top: 6px;
   color: #4a5f56;
