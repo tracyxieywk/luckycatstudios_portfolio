@@ -64,10 +64,10 @@
           <h2>Where would you like to begin?</h2>
         </div>
         <div class="begin-links" aria-label="Quick start links">
-          <a href="illustrations.html#work">Digital Media</a>
           <a href="video-art.html#work">Video Art</a>
           <a href="modeling.html#work">3D Modeling</a>
           <a href="coding.html#work">Coding</a>
+          <a href="illustrations.html#work">Digital Media</a>
           <a href="#about">About Me</a>
           <a href="#contact">Contact</a>
         </div>
@@ -78,19 +78,14 @@
       <div class="work-header">
         <h2>MY WORK</h2>
         <div class="filter-chips" aria-label="Artwork categories">
-          <a class="chip" href="illustrations.html#work">Digital Media</a>
           <a class="chip" href="video-art.html#work">Video Art</a>
           <a class="chip" href="modeling.html#work">3D Modeling</a>
           <a class="chip" href="coding.html#work">Coding</a>
+          <a class="chip" href="illustrations.html#work">Digital Media</a>
         </div>
       </div>
 
       <div class="artwork-grid">
-        <article class="artwork-card" data-category="illustrations">
-          <img class="artwork-image" src="illustrations/illustration-02.png" alt="Portrait illustration with blue and violet tones">
-          <h3>Open Wound</h3>
-          <p>Digital Media · 2023</p>
-        </article>
         <article class="artwork-card" data-category="modeling">
           <video class="artwork-image modeling-video" controls preload="metadata" playsinline>
             <source src="3d-modeling/chess-set-animation.mp4" type="video/mp4">
@@ -103,6 +98,11 @@
           <img class="artwork-image" src="3d-modeling/taylor-the-cat.png" alt="3D render of Taylor the cat standing beside a pink washing machine">
           <h3>Taylor the Cat</h3>
           <p>3D Modeling · 2025</p>
+        </article>
+        <article class="artwork-card" data-category="illustrations">
+          <img class="artwork-image" src="illustrations/illustration-02.png" alt="Portrait illustration with blue and violet tones">
+          <h3>Open Wound</h3>
+          <p>Digital Media · 2023</p>
         </article>
         <article class="artwork-card" data-category="illustrations">
           <img class="artwork-image" src="IMG_1523.png" alt="Forest scene hero illustration">
@@ -191,6 +191,13 @@
           </a>
           <h3><a class="coding-title-link" href="https://sjsu-cadre-classes.github.io/SJSU_Art_101_S26_01/Assignments/Project_1/TracyKyaw/" target="_blank" rel="noopener noreferrer">Cravings of the Week</a></h3>
           <p>Coding · Spring 2026</p>
+        </article>
+        <article class="coding-card" data-category="coding">
+          <a class="coding-link" href="https://tracykyaw.art/coding.html#work" target="_blank" rel="noopener noreferrer">
+            <img class="coding-image" src="coding/portfolio-website.jpg" alt="Screenshot of the Portfolio Website">
+          </a>
+          <h3><a class="coding-title-link" href="https://tracykyaw.art/coding.html#work" target="_blank" rel="noopener noreferrer">Portfolio Website</a></h3>
+          <p>Coding · 2026</p>
         </article>
       </div>
     </section>
@@ -320,10 +327,10 @@
       var tabLinks = document.querySelectorAll(".filter-chips .chip");
       var categoryToPage = {
         all: "index.html",
-        illustrations: "illustrations.html",
         "video-art": "video-art.html",
         modeling: "modeling.html",
-        coding: "coding.html"
+        coding: "coding.html",
+        illustrations: "illustrations.html"
       };
 
       artworkCards.forEach(function (card) {
